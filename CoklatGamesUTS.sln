@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoklatGamesUTS", "Assembly-CSharp-firstpass.csproj", "{F513D9B2-F883-0EF0-D8F0-A90FCB255092}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoklatGamesUTS", "Assembly-CSharp.csproj", "{2560E509-2A53-BE88-EEAE-0D7EF0360071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoklatGamesUTS", "Assembly-CSharp-Editor.csproj", "{C5E3CC4E-B789-48C4-05A6-13572CB6D2F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F513D9B2-F883-0EF0-D8F0-A90FCB255092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F513D9B2-F883-0EF0-D8F0-A90FCB255092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F513D9B2-F883-0EF0-D8F0-A90FCB255092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F513D9B2-F883-0EF0-D8F0-A90FCB255092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2560E509-2A53-BE88-EEAE-0D7EF0360071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2560E509-2A53-BE88-EEAE-0D7EF0360071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2560E509-2A53-BE88-EEAE-0D7EF0360071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2560E509-2A53-BE88-EEAE-0D7EF0360071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5E3CC4E-B789-48C4-05A6-13572CB6D2F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E3CC4E-B789-48C4-05A6-13572CB6D2F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5E3CC4E-B789-48C4-05A6-13572CB6D2F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E3CC4E-B789-48C4-05A6-13572CB6D2F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

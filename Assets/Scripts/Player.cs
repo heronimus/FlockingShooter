@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : Entity {
 
-	private int level;
+	private int levelStatus;
 	private float currentLevelExperience;
 	private float experienceToLevel;
 
@@ -14,6 +14,10 @@ public class Player : Entity {
 		levelUP ();	
 	}
 
+	void Update(){
+
+	}
+
 	public void addExperience(float exp){
 		currentLevelExperience += exp;
 		if (currentLevelExperience >= experienceToLevel) {
@@ -21,14 +25,19 @@ public class Player : Entity {
 			levelUP();
 		}
 
-		gui.setPlayerExperience (level, experienceToLevel-currentLevelExperience);
-		Debug.Log ("exp: " + currentLevelExperience + " level: " + level);
+		gui.setPlayerExperience (levelStatus, experienceToLevel-currentLevelExperience);
+		Debug.Log ("exp: " + currentLevelExperience + " level: " + levelStatus);
 	}
 
 	private void levelUP(){
-		level ++;
-		experienceToLevel = level * 50 + Mathf.Pow (level * 2, 2);
+		levelStatus++;
+		experienceToLevel = levelStatus * 50 + Mathf.Pow (levelStatus * 2, 2);
 
 		addExperience (0);
+	}
+
+	//public Vector3 position;
+	override protected Vector3 Combine(){
+		return conf.separationPriority* Separation();
 	}
 }

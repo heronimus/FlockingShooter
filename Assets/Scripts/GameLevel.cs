@@ -15,7 +15,7 @@ public class GameLevel : MonoBehaviour {
 
 	public float bounds;
 	public float spawnRadius;
-	public static float yGlobalAxis = 0.48f;
+	public static float yGlobalAxis = 1f;
 
 
 	void Start () {
@@ -23,12 +23,13 @@ public class GameLevel : MonoBehaviour {
 		enemies = new List<Player>();
 
 		Spawn (memberPrefab, numberOfMembers);
-		Spawn (enemyPrefab, numberOfEnemies);
+		//Spawn (enemyPrefab, numberOfEnemies);
 
 		members.AddRange (FindObjectsOfType<Enemy> ());
 		enemies.AddRange (FindObjectsOfType<Player> ());
 	}
 
+	//yGlobal Axis di set 1 biar gak terbang
 	void Spawn(Transform prefab, int count){
 		for (int i = 0; i < count; i++) {
 			Instantiate (prefab, new Vector3 (Random.Range(-spawnRadius,spawnRadius), yGlobalAxis, Random.Range (-spawnRadius, spawnRadius) ), Quaternion.identity);

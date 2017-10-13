@@ -6,9 +6,9 @@ public class GameGUI : MonoBehaviour {
 	public TextMesh Level;
 	public TextMesh Exp;
 
-	public void setPlayerExperience(int playerLevel, float playerExperience){
-		Level.text = "Level : "+ playerLevel ;
-		Exp.text = "Experience Left: " + playerExperience ;
+	public void setPlayerExperience(int healthLeft, float enemiesLeft){
+		Level.text = "Health : "+ healthLeft ;
+		Exp.text = "Enemies Left :" + enemiesLeft ;
 	}
 
 

@@ -13,7 +13,7 @@ public class Entity : MonoBehaviour {
 
 	Vector3 wanderTarget;
 
-	public static float yGlobalAxis = 1.0f;
+	public static float yGlobalAxis = 1f;
 
 	public virtual void takeDamage(float dmg){
 		health -= dmg;
@@ -36,6 +36,7 @@ public class Entity : MonoBehaviour {
 	 * 
 	 * */
 
+	//Kode Dari Member di Flocking Bird untuk ngejauhin player.
 
 	protected Vector3 Wander(){
 		float jitter = conf.wanderJitter * Time.deltaTime;
@@ -134,8 +135,7 @@ public class Entity : MonoBehaviour {
 
 	protected void WrapAround(ref Vector3 vector, float min, float max){
 		vector.x = WrapAroundFloat (vector.x, min, max);
-		//vector.y = WrapAroundFloat (vector.y, min, max);
-		vector.y = yGlobalAxis;
+		vector.y = WrapAroundFloat (vector.y, min, max);
 		vector.z = WrapAroundFloat (vector.z, min, max);
 	}
 

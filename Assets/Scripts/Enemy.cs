@@ -14,7 +14,7 @@ public class Enemy : Entity {
 		conf = FindObjectOfType<EntityConfig> ();
 
 		position = transform.position;
-		velocity = new Vector3 (Random.Range (-3, 3), yGlobalAxis , Random.Range (-3, 3));
+		velocity = new Vector3 (Random.Range (-3, 3), 0 , Random.Range (-3, 3));
 
 	}
 
@@ -22,7 +22,9 @@ public class Enemy : Entity {
 		player.addExperience (expOnDeath);
 		base.Die ();
 	}
-		
+
+	//Untuk Enemy (Kotak Merah) Gerak setiap saat
+	// * dari kode Member di Flocking Bird
 	void Update(){
 		acceleration = Combine ();
 		acceleration = Vector3.ClampMagnitude (acceleration, conf.maxAcceleration);
@@ -30,17 +32,9 @@ public class Enemy : Entity {
 		velocity = Vector3.ClampMagnitude (velocity, conf.maxVelocity);
 		position = position + velocity * Time.deltaTime;
 		WrapAround(ref position, -level.bounds, level.bounds);
-
 		position.y = yGlobalAxis;
 	
 		transform.position = position;
 	}
-
-
-	/// <summary>
-	/// ////////////
-	/// </summary>
-	/// 
-
 
 }

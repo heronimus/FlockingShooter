@@ -1,50 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameLevel : MonoBehaviour {
 
-	public Transform memberPrefab;
 	public Transform enemyPrefab;
-
-	public int numberOfMembers;
 	public int numberOfEnemies;
 
-	public List<Enemy> members;
-	public List<Player> enemies;
+	public List<Enemy> enemies;
+	public List<Player> players;
 
 	public float bounds;
 	public float spawnRadius;
 	public static float yGlobalAxis = 1f;
 
+	HUDCanvas gui;
 
 	void Start () {
-		members = new List<Enemy>();
-		enemies = new List<Player>();
+		gui = GameObject.FindGameObjectWithTag ("GUI").GetComponent<HUDCanvas> ();
+		gui.setMaxEnemies (numberOfEnemies);
 
-		Spawn (memberPrefab, numberOfMembers);
-		//Spawn (enemyPrefab, numberOfEnemies);
+		enemies = new List<Enemy>();
+		players = new List<Player>();
 
-		members.AddRange (FindObjectsOfType<Enemy> ());
-		enemies.AddRange (FindObjectsOfType<Player> ());
+		Spawn (enemyPrefab, numberOfEnemies-1);
+
+		enemies.AddRange (FindObjectsOfType<Enemy> ());
+		players.AddRange (FindObjectsOfType<Player> ());
 	}
-
-	//yGlobal Axis di set 1 biar gak terbang
+		
 	void Spawn(Transform prefab, int count){
 		for (int i = 0; i < count; i++) {
 			Instantiate (prefab, new Vector3 (Random.Range(-spawnRadius,spawnRadius), yGlobalAxis, Random.Range (-spawnRadius, spawnRadius) ), Quaternion.identity);
 		}
 	}
 
-	public List<Enemy> GetNeighbors(Entity member, float radius){
+	public List<Enemy> GetNeighbors(Entity enemy, float radius){
 		List<Enemy> neighborsFound = new List<Enemy> ();
-		foreach (var otherMember in members)
-		{
-			if (otherMember == member)
+		foreach (var otherEnemies in enemies){
+			if (otherEnemies == enemy)
 				continue;
 
-			if (Vector3.Distance (member.position, otherMember.position) <= radius) {
-				neighborsFound.Add (otherMember);
+			if (Vector3.Distance (enemy.position, otherEnemies.position) <= radius) {
+				neighborsFound.Add (otherEnemies);
 			}
 		}
 
@@ -52,17 +51,14 @@ public class GameLevel : MonoBehaviour {
 	}
 
 
-	public List<Player> GetEnemies(Entity member, float radius){
+	public List<Player> GetEnemies(Entity enemy, float radius){
 		List<Player> returnEnemies = new List<Player> ();
-
-
-		foreach (var enemy in enemies) {
-			if (Vector3.Distance (member.position, enemy.position) <= radius) {
-				returnEnemies.Add (enemy);
+		foreach (var player in players) {
+			if (Vector3.Distance (enemy.position, player.position) <= radius) {
+				returnEnemies.Add (player);
 			}
-
-
 		}
+
 		return returnEnemies;
 	}
 }

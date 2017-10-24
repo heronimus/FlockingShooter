@@ -28,13 +28,8 @@ public class PlayerContoller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		controlWASD ();
-		//controlMouse ();
-		//controlTouch ();
-		if (Input.GetButtonDown ("Shoot")) {
-			gun.Shoot();
-		}
-		// fungsi shoot untuk touch control
-		if (CrossPlatformInputManager.GetButtonDown ("Shoot")) {
+		controlTouch ();
+		if (Input.GetButtonDown ("Shoot") || CrossPlatformInputManager.GetButtonDown ("Shoot")) {
 			gun.Shoot();
 		}
 

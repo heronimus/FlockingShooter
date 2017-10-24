@@ -26,7 +26,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 #if MOBILE_INPUT
             activeInput = s_TouchInput;
 #else
-			activeInput = s_HardwareInput;
+			activeInput = s_TouchInput;
 #endif
 		}
 

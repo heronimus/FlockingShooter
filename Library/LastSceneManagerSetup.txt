@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/Game1.unity
+- path: Assets/Scene/FlockingShooter-CoklatGames.unity
   isLoaded: 1
   isActive: 1

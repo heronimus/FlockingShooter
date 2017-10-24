@@ -18,7 +18,7 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
             var defines = GetDefinesList(buildTargetGroups[0]);
             if (!defines.Contains("CROSS_PLATFORM_INPUT"))
             {
-                SetEnabled("CROSS_PLATFORM_INPUT", true, false);
+				SetEnabled("CROSS_PLATFORM_INPUT", true, false);
                 SetEnabled("MOBILE_INPUT", true, true);
             }
         }

@@ -7,6 +7,7 @@ public class Entity : MonoBehaviour {
 	public Vector3 position;
 	public Vector3 velocity;
 	public Vector3 acceleration;
+	public Transform deadPrefab;
 
 	public GameLevel level;
 	public EntityConfig conf;
@@ -17,26 +18,17 @@ public class Entity : MonoBehaviour {
 
 	public virtual void takeDamage(float dmg){
 		health -= dmg;
-
-		Debug.Log (health);
-
+		//Debug.Log (health);
 		if (health <= 0) {
 			Die();
 		}
-
 	}
 
 	public virtual void Die(){
-		Debug.Log ("Dead");
+		//Debug.Log ("Dead");
+		Instantiate (deadPrefab, transform.position, Quaternion.identity);
 		Destroy (gameObject);
 	}
-
-	/* *
-	 * 
-	 * 
-	 * */
-
-	//Kode Dari Member di Flocking Bird untuk ngejauhin player.
 
 	protected Vector3 Wander(){
 		float jitter = conf.wanderJitter * Time.deltaTime;

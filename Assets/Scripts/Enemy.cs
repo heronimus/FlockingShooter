@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Enemy : Entity {
 
-	public float expOnDeath;
 	private Player player;
 
 
@@ -19,12 +18,10 @@ public class Enemy : Entity {
 	}
 
 	public override void Die(){
-		player.addExperience (expOnDeath);
+		player.KillEnemy();
 		base.Die ();
 	}
-
-	//Untuk Enemy (Kotak Merah) Gerak setiap saat
-	// * dari kode Member di Flocking Bird
+		
 	void Update(){
 		acceleration = Combine ();
 		acceleration = Vector3.ClampMagnitude (acceleration, conf.maxAcceleration);

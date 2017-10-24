@@ -13,16 +13,33 @@ public class Gun : MonoBehaviour {
 	public Transform shellEjectionPoint;
 	public Rigidbody shell;
 
+
 	private LineRenderer tracer;
+
+
+	public Light faceLight;	
+	ParticleSystem gunParticles;  
+	Light gunLight;  
 
 	void Start(){
 		if (GetComponent<LineRenderer> ()) {
 			tracer = GetComponent<LineRenderer>();
 		}
+		if (GetComponent<ParticleSystem> ()) {
+			gunParticles = GetComponent<ParticleSystem> ();
+		}
+		if (GetComponent<Light> ()) {
+			gunLight = GetComponent<Light> ();
+		}
+			
 	}
-
-
+		
 	public void Shoot(){
+		gunLight.enabled = true;
+		faceLight.enabled = true;
+		gunParticles.Stop ();
+		gunParticles.Play ();
+
 		//fungsi tembak mengunakan sistem ray
 		//buat ray + arahnya
 		Ray ray = new Ray (spawn.position, spawn.forward);
@@ -61,6 +78,10 @@ public class Gun : MonoBehaviour {
 		tracer.SetPosition (1, spawn.position + hitPoint);
 		yield return null;
 		tracer.enabled = false;
+
+		gunParticles.Stop ();
+		gunLight.enabled = false;
+		faceLight.enabled = false;
 	}
 	
 	

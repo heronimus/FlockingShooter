@@ -73,3 +73,10 @@
 /Users/eumnroshi/Documents/unity/FlockingShooter-CoklatGames/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/eumnroshi/Documents/unity/FlockingShooter-CoklatGames/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/eumnroshi/Documents/unity/FlockingShooter-CoklatGames/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/eumnroshi/Documents/unity/FlockingShooter-CoklatGames/Temp/bin/Debug/UnityEngine.UIAutomation.dll
+/Users/eumnroshi/Documents/unity/FlockingShooter-CoklatGames/Temp/bin/Debug/UnityEngine.GoogleAudioSpatializer.dll
+/Users/eumnroshi/Documents/unity/FlockingShooter-CoklatGames/Temp/bin/Debug/UnityEngine.SpatialTracking.dll
+/Users/eumnroshi/Documents/unity/FlockingShooter-CoklatGames/Temp/bin/Debug/UnityEngine.Purchasing.dll
+/Users/eumnroshi/Documents/unity/FlockingShooter-CoklatGames/Temp/bin/Debug/Unity.Cecil.dll
+/Users/eumnroshi/Documents/unity/FlockingShooter-CoklatGames/Temp/bin/Debug/Unity.Cecil.Pdb.dll
+/Users/eumnroshi/Documents/unity/FlockingShooter-CoklatGames/Temp/bin/Debug/Unity.Cecil.Mdb.dll

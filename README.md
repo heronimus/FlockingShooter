@@ -1,2 +1,8 @@
-# FlockingShooter
-Unity Games Project by CoklatGames for UTS.
+# Flocking Shooter
+Unity Games Project by CoklatGames.
+
+### Made from Unity Tutorial Projects
+ *  Tanks
+ *  Survival Shooter
+
+## Made By CoklatGames 2017 

@@ -5,4 +5,7 @@ Unity Games Project by CoklatGames.
  *  Tanks
  *  Survival Shooter
 
-## Made By CoklatGames 2017 
+### License
+This project (Flocking Shooter) is licensed under the [MIT license](https://github.com/heronimus/FlockingShooter/blob/master/LICENSE.TXT).
+
+### Made By CoklatGames 2017 
